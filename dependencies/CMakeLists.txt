@@ -32,7 +32,7 @@ FetchContent_Declare(
 # SFML
 option(SFML_BUILD_AUDIO "Build audio" OFF)
 option(SFML_BUILD_NETWORK "Build network" OFF)
-FetchContent_MakeAvailable(sfml)
+FetchContent_MakeAvailable(SFML)
 
 # Dear ImGui
 FetchContent_MakeAvailable(imgui)
@@ -43,3 +43,4 @@ option(IMGUI_SFML_FIND_SFML "Use find_package to find SFML" OFF)
 option(IMGUI_SFML_IMGUI_DEMO "Build imgui_demo.cpp" ON)
 
 FetchContent_MakeAvailable(imgui-sfml)
+

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BFS.h"
+#include "DFS.h"
 
 class PathFinding
 {

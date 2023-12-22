@@ -4,7 +4,7 @@ Grid<int>& BFS::getGrid() {
     return grid;
 }
 
-Size BFS::getGridSize() const {
+Size BFS::getGridSize() const  {
     return grid.getSize();
 }
 
@@ -16,7 +16,7 @@ void BFS::setGridSize(Size size) {
     this->size = size;
 
     grid.setSize(size);
-    visited.setSize(size);
+    visited.setSize(size, false);
     short_path.clear();
 
     reset();

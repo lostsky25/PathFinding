@@ -2,7 +2,7 @@
 
 PathFinding::PathFinding(Size size) {
     algorithms[AlgorithmType::BreadthFirstSearch] = new BFS();
-    algorithms[AlgorithmType::DepthFirstSearch] = new BFS();
+    algorithms[AlgorithmType::DepthFirstSearch] = new DFS();
 
     for (auto& [algorithmType, algorithm] : algorithms) {
         algorithm->setGridSize(size);

@@ -1,12 +1,12 @@
 include(GNUInstallDirs)
 
-install(TARGETS path-finding
+install(TARGETS path_finding
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 # Installing is not easy, when we're dealing with shared libs
 if(NOT LINK_DEPS_STATIC)
-  set_target_properties(path-finding PROPERTIES
+  set_target_properties(path_finding PROPERTIES
     INSTALL_RPATH $ORIGIN/../${CMAKE_INSTALL_LIBDIR}
   )
 
