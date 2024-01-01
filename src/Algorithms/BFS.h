@@ -4,30 +4,33 @@
 #include <queue>
 #include <unordered_map>
 
-#include "DataTypes.h"
-#include "Visited.h"
-#include "Distance.h"
-#include "Path.h"
-#include "Grid.h"
+#include "Algorithms/DataTypes/DataTypes.h"
+#include "Algorithms/DataTypes/Visited.h"
+#include "Algorithms/DataTypes/Distance.h"
+#include "Algorithms/DataTypes/Path.h"
+#include "Algorithms/DataTypes/Grid.h"
 
-#include "BaseAlgorithm.h"
+#include "Algorithms/BaseAlgorithm.h"
 
-class DFS : public BaseAlgorithm
+class BFS : public BaseAlgorithm
 {
 public:
-    DFS() = default;
+    BFS() = default;
 
     Grid<int>& getGrid();
     Size getGridSize() const override;
     bool hasFromTo() const;
     void setGridSize(Size size) override;
+    void drawShortPath() override;
     void reset() override;
     void setFrom(const Point& from) override;
+    Point getFrom() override;
+    Point getTo() override;
     void setTo(const Point& to) override;
     v<Point> getNeighbors(const Point& p) override;
     bool singleStepOfAlg() override;
-    
-    ~DFS() = default;
+
+    ~BFS() = default;
 
 private:
     bool searchState = true;
@@ -35,12 +38,13 @@ private:
     bool stateFrom = false;
     bool stateTo = false;
 
-    // std::queue<Point> q;
+    std::queue<Point> q;
 
     Visited<int> visited;
     Path<Point> path;
-    v<Point> s;
-    // Distance<int> dist;
+    Distance<int> dist;
 
     friend class PathFinding;
 };
+
+

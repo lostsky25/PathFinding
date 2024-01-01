@@ -1,3 +1,6 @@
+# ImGui files
+imgui.ini
+
 # Compiled Object files
 **/.DS_Store
 *.slo
